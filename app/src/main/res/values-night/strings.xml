@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="start_date">Start date</string>
+    <string name="end_date">End date</string>
+    <string name="min_amount">Minimum amount</string>
+    <string name="max_amount">Maximum amount</string>
+    <string name="apply">Apply</string>
+    <string name="cancel">Cancel</string>
+</resources>
