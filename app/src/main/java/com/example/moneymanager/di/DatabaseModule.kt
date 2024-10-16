@@ -32,4 +32,8 @@ object DatabaseModule {
             "app_database"
         ).build()
     }
+
+    @Provides
+    @Singleton
+    fun provideAccountDao(appDatabase: AppDatabase) = appDatabase.accountDao()
 }
