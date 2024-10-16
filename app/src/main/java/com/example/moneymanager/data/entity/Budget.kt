@@ -21,8 +21,6 @@ data class Budget(
     @ColumnInfo(name = "account_id") val accountId: Int,
     @ColumnInfo(name = "type_color") val typeColor: String,
     val amount: Double,
-    @TypeConverters(CurrencyTypeConverter::class)
-    @ColumnInfo(name = "currency") val currency: Currency,
     @ColumnInfo(name = "period_date_start") val periodDateStart: Long,
     @ColumnInfo(name = "period_date_end") val periodDateEnd: Long,
     val period: String,

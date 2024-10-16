@@ -5,7 +5,10 @@ import androidx.lifecycle.viewModelScope
 import com.example.moneymanager.data.entity.Account
 import com.example.moneymanager.data.entity.enums.Currency
 import com.example.moneymanager.data.repository.AccountRepository
+import com.example.moneymanager.di.AppDispatchers
+import com.example.moneymanager.di.Dispatcher
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -20,6 +23,7 @@ data class AddingAccount(
 @HiltViewModel
 class MainViewModel @Inject constructor(
     private val repository: AccountRepository,
+    @Dispatcher(AppDispatchers.IO) private val ioDispatcher: CoroutineDispatcher
 ) : ViewModel() {
 
     private val _accounts : MutableStateFlow<List<Account>> = MutableStateFlow(emptyList())
@@ -36,6 +40,9 @@ class MainViewModel @Inject constructor(
 
     init {
         getAccount()
+        if(accounts.value.isNotEmpty()) {
+            setCurrentAccount(accounts.value[0])
+        }
     }
 
     fun setLanguage(languageCode: String) {
@@ -57,4 +64,29 @@ class MainViewModel @Inject constructor(
             }
         }
     }
+
+    fun addAccount() {
+        viewModelScope.launch(ioDispatcher) {
+            val newAccount = addingAccount.value
+            if (newAccount.name.isNotEmpty()) {
+                val accountId = repository.insertAccount(
+                    Account(
+                        nameAccount = newAccount.name,
+                        currency = newAccount.currency
+                    )
+                )
+
+                setCurrentAccount(
+                    Account(
+                        id = accountId,
+                        nameAccount = newAccount.name,
+                        currency = newAccount.currency
+                    )
+                )
+
+                _addingAccount.value = AddingAccount("", Currency.USD, 0.0)
+            }
+        }
+    }
+
 }

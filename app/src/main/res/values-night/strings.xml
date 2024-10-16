@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name" translatable="false">Money Manager</string>
-    <string name="">Search</string>
+    <string name="search">Search</string>
     <string name="filter_options">Filter options</string>
     <string name="date">Date</string>
     <string name="select_date">Select Date</string>
@@ -17,7 +17,6 @@
     <string name="max_amount">Maximum amount</string>
     <string name="apply">Apply</string>
     <string name="cancel">Cancel</string>
-    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="uk_flag">UK Flag</string>
     <string name="select_your_language">Select Your Language</string>
     <string name="done">Done</string>
@@ -36,6 +35,11 @@
     <string name="choose_a_name_for_your_account">Choose a name for your account.</string>
     <string name="name">Name</string>
     <string name="next">Next</string>
+    <string name="skip">SKIP</string>
+    <string name="initial_amount">Initial Amount</string>
+    <string name="cash_wallet_prompt">How much money do you have in your cash wallet?</string>
+    <string name="select_currency">Select Currency</string>
+    <string name="favorite_currency_prompt">What is your favourite currency?</string>
 
     <!-- Currency Names and Symbols -->
     <string name="currency_cny">CNY</string>

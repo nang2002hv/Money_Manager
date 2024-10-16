@@ -20,6 +20,5 @@ data class Debt(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     @ColumnInfo(name = "account_id") val accountId: Int,
     val amount: Double,
-    @ColumnInfo(name = "type_color") val typeColor: String,
-    @TypeConverters(CurrencyTypeConverter::class) val currency: Currency
+    @ColumnInfo(name = "type_color") val typeColor: String
 )

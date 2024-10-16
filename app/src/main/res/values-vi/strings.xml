@@ -27,6 +27,12 @@
     <string name="choose_a_name_for_your_account">Chọn tên cho tài khoản của bạn.</string>
     <string name="name">Tên</string>
     <string name="next">Tiếp theo</string>
+    <string name="select_currency">Chọn Tiền Tệ</string>
+    <string name="favorite_currency_prompt">Loại tiền tệ yêu thích của bạn là gì?</string>
+    <string name="skip">BỎ QUA</string>
+    <string name="initial_amount">Số Tiền Ban Đầu</string>
+    <string name="cash_wallet_prompt">Bạn có bao nhiêu tiền trong ví tiền mặt của mình?</string>
+
 
     <!-- Currency Names and Symbols -->
     <string name="currency_cny">CNY</string>

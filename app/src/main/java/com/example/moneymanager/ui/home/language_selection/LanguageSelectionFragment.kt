@@ -48,7 +48,7 @@ class LanguageSelectionFragment : Fragment() {
 
             // Navigate to next screen and remove from backstack
             findNavController().navigate(R.id.action_languageSelectionFragment_to_addAccountFragment)
-            findNavController().popBackStack(R.id.languageSelectionFragment, true)
+            //findNavController().popBackStack(R.id.languageSelectionFragment, true)
         }
 
         return binding.root
