@@ -3,11 +3,88 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/searchFragment">
+    tools:ignore="InvalidNavigation">
 
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.example.moneymanager.ui.search.SearchFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" />
+
+    <fragment
+        android:id="@+id/languageSelectionFragment"
+        android:name="com.example.moneymanager.ui.home.language_selection.LanguageSelectionFragment"
+        android:label="fragment_language_selection"
+        tools:layout="@layout/fragment_language_selection" >
+        <action
+            android:id="@+id/action_languageSelectionFragment_to_addAccountFragment"
+            app:destination="@id/addAccountFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.moneymanager.ui.home.home_screen.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_addAccountFragment"
+            app:destination="@id/addAccountFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addAccountFragment"
+        android:name="com.example.moneymanager.ui.home.add_account.AddAccountFragment"
+        android:label="fragment_add_account"
+        tools:layout="@layout/fragment_add_account" >
+        <action
+            android:id="@+id/action_addAccountFragment_to_currencySelectionFragment"
+            app:destination="@id/currencySelectionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/lockScreenFragment"
+        android:name="com.example.moneymanager.ui.home.lock_screen.LockScreenFragment"
+        android:label="fragment_lock_screen"
+        tools:layout="@layout/fragment_lock_screen" />
+
+    <fragment
+        android:id="@+id/initAmountFragment"
+        android:name="com.example.moneymanager.ui.home.init_amount.InitAmountFragment"
+        android:label="fragment_init_amount"
+        tools:layout="@layout/fragment_init_amount" >
+        <action
+            android:id="@+id/action_initAmountFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/currencySelectionFragment"
+        android:name="com.example.moneymanager.ui.home.currency_selection.CurrencySelectionFragment"
+        android:label="fragment_currency_selection"
+        tools:layout="@layout/fragment_currency_selection" >
+        <action
+            android:id="@+id/action_currencySelectionFragment_to_initAmountFragment"
+            app:destination="@id/initAmountFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
 </navigation>

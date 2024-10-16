@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Money Manager</string>
+    <string name="search">खोजें</string>
+    <string name="filter_options">फ़िल्टर विकल्प</string>
+    <string name="date">तारीख</string>
+    <string name="select_date">तारीख चुनें</string>
+    <string name="wallet">बटुआ</string>
+    <string name="category">श्रेणी</string>
+    <string name="description">विवरण</string>
+    <string name="enter_description">विवरण दर्ज करें</string>
+    <string name="amount">राशि</string>
+    <string name="enter_amount">राशि दर्ज करें</string>
+    <string name="start_date">प्रारंभ तिथि</string>
+    <string name="end_date">अंतिम तिथि</string>
+    <string name="min_amount">न्यूनतम राशि</string>
+    <string name="max_amount">अधिकतम राशि</string>
+    <string name="apply">लागू करें</string>
+    <string name="cancel">रद्द करें</string>
+    <string name="uk_flag">यूके ध्वज</string>
+    <string name="select_your_language">अपनी भाषा चुनें</string>
+    <string name="done">समाप्त</string>
+    <string name="english">अंग्रेज़ी</string>
+    <string name="vietnamese">वियतनामी</string>
+    <string name="hindi">हिंदी</string>
+    <string name="add_account">खाता जोड़ें</string>
+    <string name="choose_a_name_for_your_account">अपने खाते के लिए एक नाम चुनें।</string>
+    <string name="name">नाम</string>
+    <string name="next">अगला</string>
+
+    <!-- Currency Names and Symbols -->
+    <string name="currency_cny">CNY</string>
+    <string name="currency_cny_symbol">¥</string>
+    <string name="currency_inr">INR</string>
+    <string name="currency_inr_symbol">₹</string>
+    <string name="currency_vnd">VND</string>
+    <string name="currency_vnd_symbol">₫</string>
+    <string name="currency_usd">USD</string>
+    <string name="currency_usd_symbol">$</string>
+</resources>

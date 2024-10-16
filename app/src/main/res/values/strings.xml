@@ -16,8 +16,34 @@
     <string name="max_amount">Maximum amount</string>
     <string name="apply">Apply</string>
     <string name="cancel">Cancel</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="uk_flag">UK Flag</string>
+    <string name="select_your_language" translatable="false">Select Your Language</string>
+    <string name="done">Done</string>
+    <string name="english">English</string>
+    <string name="vietnam_flag" translatable="false">Vietnam Flag</string>
+    <string name="vietnamese">Vietnamese</string>
+    <string name="tieng_viet" translatable="false">(Tiếng Việt)</string>
+    <string name="hindi">(हिंदी)</string>
+    <string name="hindi_en" translatable="false">Hindi</string>
+    <string name="india_flag" translatable="false">India Flag</string>
+    <string name="chinese" translatable="false">(中文)</string>
+    <string name="chinese_en" translatable="false">Chinese</string>
+    <string name="china_flag" translatable="false">China Flag</string>
+    <string name="english_bracet" translatable="false">(English)</string>
+    <string name="add_account">Add Account</string>
+    <string name="choose_a_name_for_your_account">Choose a name for your account.</string>
+    <string name="name">Name</string>
+    <string name="next">Next</string>
+
+    <!-- Currency Names and Symbols -->
+    <string name="currency_cny">CNY</string>
+    <string name="currency_cny_symbol" translatable="false">¥</string>
+    <string name="currency_inr">INR</string>
+    <string name="currency_inr_symbol" translatable="false">₹</string>
+    <string name="currency_vnd">VND</string>
+    <string name="currency_vnd_symbol" translatable="false">₫</string>
+    <string name="currency_usd">USD</string>
+    <string name="currency_usd_symbol" translatable="false">$</string>
 
     <string-array name="wallet_options">
         <item>Cash</item>
