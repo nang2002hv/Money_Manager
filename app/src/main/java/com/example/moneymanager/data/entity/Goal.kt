@@ -21,8 +21,6 @@ data class Goal(
     @ColumnInfo(name = "account_id") val accountId: Int,
     @ColumnInfo(name = "target_date") val targetDate: Long,
     @ColumnInfo(name = "type_color") val typeColor: String,
-    @TypeConverters(CurrencyTypeConverter::class)
-    @ColumnInfo(name = "currency") val currency: Currency,
     @ColumnInfo(name = "goal_amount") val goalAmount: Double,
     @ColumnInfo(name = "current_money") val currentMoney: Double
 )

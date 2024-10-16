@@ -34,6 +34,13 @@
     <string name="choose_a_name_for_your_account">Choose a name for your account.</string>
     <string name="name">Name</string>
     <string name="next">Next</string>
+    <string name="select_currency">Select Currency</string>
+    <string name="favorite_currency_prompt">What is your favourite currency?</string>
+    <string name="skip">SKIP</string>
+    <string name="initial_amount">Initial Amount</string>
+    <string name="cash_wallet_prompt">How much money do you have in your cash wallet?</string>
+    <string name="amount_hint" translatable="false">%1$s 0</string>
+
 
     <!-- Currency Names and Symbols -->
     <string name="currency_cny">CNY</string>

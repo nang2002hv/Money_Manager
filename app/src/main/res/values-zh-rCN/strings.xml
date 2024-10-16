@@ -27,6 +27,12 @@
     <string name="choose_a_name_for_your_account">为您的账户选择一个名称。</string>
     <string name="name">名称</string>
     <string name="next">下一步</string>
+    <string name="select_currency">选择货币</string>
+    <string name="favorite_currency_prompt">您最喜欢的货币是什么？</string>
+    <string name="skip">跳过</string>
+    <string name="initial_amount">初始金额</string>
+    <string name="cash_wallet_prompt">您的现金钱包里有多少钱？</string>
+
 
     <!-- Currency Names and Symbols -->
     <string name="currency_cny">CNY</string>

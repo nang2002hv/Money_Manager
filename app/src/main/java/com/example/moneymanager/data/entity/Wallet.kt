@@ -24,5 +24,4 @@ data class Wallet(
     @ColumnInfo(name = "account_id") val accountId: Int,
     @TypeConverters(WalletTypeConverter::class)
     @ColumnInfo(name = "type_wallet_name") val typeWallet: WalletType,
-    @TypeConverters(CurrencyTypeConverter::class) val currency: Currency
 )
