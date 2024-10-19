@@ -1,18 +1,22 @@
 package com.example.moneymanager.ui
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.os.LocaleListCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.example.moneymanager.R
+import com.example.moneymanager.core.LanguageStart
+import com.example.moneymanager.core.checkLanguageInitialization
 import com.example.moneymanager.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import java.util.Locale
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -26,6 +30,12 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Check language initialization
+        if (checkLanguageInitialization(this) == LanguageStart.NOT_INITIALIZED) {
+            setPreferredLocale("en") // Set default language to English
+        }
+
         setContentView(binding.root)
 
         // Initialize NavController
@@ -33,40 +43,39 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
 
-        // Dynamically set start destination based on account availability
-        lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.accounts.collect { accounts ->
-                    val graph = navController.navInflater.inflate(R.navigation.nav_graph)
-                    val startDestination = if (accounts.isNotEmpty()) {
-                        R.id.homeFragment // Navigate to Home if accounts exist
-                    } else {
-                        R.id.languageSelectionFragment // Else, navigate to Language Selection
-                    }
-                    graph.setStartDestination(startDestination)
-                    navController.graph = graph // Set the configured graph to NavController
-                }
-            }
-        }
+        setDynamicStartDestination()
+    }
 
-        // Collect language settings for locale changes
+    private fun setDynamicStartDestination() {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.selectedLanguage.collect { languageCode ->
-//                    setAppLocale(languageCode)
+                val languageStart = checkLanguageInitialization(this@MainActivity)
+                Log.d(TAG, "Checking language start: $languageStart")
+
+                val navGraph = navController.navInflater.inflate(R.navigation.nav_graph)
+                val startDestination = when (languageStart) {
+                    LanguageStart.NOT_INITIALIZED -> R.id.languageSelectionFragment
+                    LanguageStart.INITIALIZED -> {
+                        if (viewModel.accounts.value.isNotEmpty()) {
+                            R.id.homeFragment
+                        } else {
+                            R.id.addAccountFragment
+                        }
+                    }
                 }
+
+                navGraph.setStartDestination(startDestination)
+                navController.graph = navGraph // Apply the new graph to NavController
             }
         }
     }
 
-    private fun setAppLocale(languageCode: String) {
-        val locale = Locale(languageCode)
-        Locale.setDefault(locale)
+    private fun setPreferredLocale(languageCode: String) {
+        val localeList = LocaleListCompat.forLanguageTags(languageCode)
+        AppCompatDelegate.setApplicationLocales(localeList)
+    }
 
-        val config = resources.configuration
-        config.setLocale(locale)
-
-        applyOverrideConfiguration(config)
+    companion object {
+        private const val TAG = "MainActivity"
     }
 }
-

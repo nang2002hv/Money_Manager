@@ -32,9 +32,6 @@ class MainViewModel @Inject constructor(
     private val _currentAccount : MutableStateFlow<Account?> = MutableStateFlow(null)
     val currentAccount : StateFlow<Account?> get() = _currentAccount
 
-    private val _selectedLanguage = MutableStateFlow("en") // Default language code
-    val selectedLanguage: StateFlow<String> get() = _selectedLanguage
-
     private val _addingAccount = MutableStateFlow(AddingAccount("", Currency.USD, 0.0))
     val addingAccount: StateFlow<AddingAccount> get() = _addingAccount
 
@@ -43,10 +40,6 @@ class MainViewModel @Inject constructor(
         if(accounts.value.isNotEmpty()) {
             setCurrentAccount(accounts.value[0])
         }
-    }
-
-    fun setLanguage(languageCode: String) {
-        _selectedLanguage.value = languageCode
     }
 
     fun setAddingAccount(addingAccount: AddingAccount) {
