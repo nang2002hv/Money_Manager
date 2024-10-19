@@ -75,6 +75,7 @@
             android:id="@+id/englishCheckBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:tag="@string/english_language_code"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -124,6 +125,7 @@
             android:id="@+id/chineseCheckBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:tag="@string/china_language_code"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -173,6 +175,7 @@
             android:id="@+id/hindiCheckBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:tag="@string/india_language_code"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -222,6 +225,7 @@
             android:id="@+id/vietnameseCheckBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:tag="@string/vn_language_code"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
