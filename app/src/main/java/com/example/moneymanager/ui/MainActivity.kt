@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
                 viewModel.accounts.collect { accounts ->
                     val graph = navController.navInflater.inflate(R.navigation.nav_graph)
                     val startDestination = if (accounts.isNotEmpty()) {
-                        R.id.homeFragment // Navigate to Home if accounts exist
+                        R.id.addFragment // Navigate to Home if accounts exist
                     } else {
                         R.id.languageSelectionFragment // Else, navigate to Language Selection
                     }

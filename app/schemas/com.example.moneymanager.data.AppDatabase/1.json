@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "9248c96468d77958ed38fba5c9e75ad8",
+    "identityHash": "d6c5156ae9cda61d4885418d82375c3c",
     "entities": [
       {
         "tableName": "account",
@@ -274,7 +274,7 @@
       },
       {
         "tableName": "income_and_expense",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `amount` REAL NOT NULL, `description` TEXT NOT NULL, `type_category` TEXT NOT NULL, `type_of_expenditure` TEXT NOT NULL, `wallet_id` INTEGER NOT NULL, `link_img` TEXT NOT NULL, `transfer_date` INTEGER NOT NULL, FOREIGN KEY(`wallet_id`) REFERENCES `wallet`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `amount` REAL NOT NULL, `description` TEXT NOT NULL, `type_category` TEXT NOT NULL, `type_of_expenditure` TEXT NOT NULL, `wallet_id` INTEGER NOT NULL, `link_img` TEXT NOT NULL, FOREIGN KEY(`wallet_id`) REFERENCES `wallet`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
         "fields": [
           {
             "fieldPath": "id",
@@ -316,12 +316,6 @@
             "fieldPath": "linkImg",
             "columnName": "link_img",
             "affinity": "TEXT",
-            "notNull": true
-          },
-          {
-            "fieldPath": "transferDate",
-            "columnName": "transfer_date",
-            "affinity": "INTEGER",
             "notNull": true
           }
         ],
@@ -462,7 +456,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '9248c96468d77958ed38fba5c9e75ad8')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'd6c5156ae9cda61d4885418d82375c3c')"
     ]
   }
 }

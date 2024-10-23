@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--- line -->
+    <dimen name="line_height">1dp</dimen>
+    <dimen name="line_height_2">2dp</dimen>
+    <dimen name="line_height_3">3dp</dimen>
+    <dimen name="line_height_4">4dp</dimen>
+
+    <!-- Kích thước Text -->
+    <dimen name="text_size_12">12sp</dimen>
+    <dimen name="text_size_13">13sp</dimen>
+    <dimen name="text_size_14">14sp</dimen>
+    <dimen name="text_size_15">15sp</dimen>
+    <dimen name="text_size_16">16sp</dimen>
+    <dimen name="text_size_20">20sp</dimen>
+
+    <!-- Radius values -->
+    <dimen name="radius_small">4dp</dimen>
+    <dimen name="radius_medium">8dp</dimen>
+
+    <!-- Margin values -->
+    <dimen name="margin_none">1dp</dimen>
+    <dimen name="margin_micro">2dp</dimen>
+    <dimen name="margin_xsmall">4dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_large">24dp</dimen>
+    <dimen name="margin_xlarge">32dp</dimen>
+    <dimen name="image_width_cover_search_book">100dp</dimen>
+    <dimen name="image_height_cover_search_book">150dp</dimen>
+
+    <dimen name="search_height">25dp</dimen>
+
+    <!-- Padding values -->
+    <dimen name="padding_xsmall">4dp</dimen>
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_medium">16dp</dimen>
+    <dimen name="padding_large">24dp</dimen>
+    <dimen name="padding_xlarge">48dp</dimen>
+
+
+    <!-- Kích thước Icon -->
+    <dimen name="icon_size_small">24dp</dimen>
+    <dimen name="icon_size_medium">32dp</dimen>
+    <dimen name="icon_size_large">48dp</dimen>
+</resources>

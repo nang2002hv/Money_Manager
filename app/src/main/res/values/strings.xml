@@ -40,6 +40,11 @@
     <string name="initial_amount">Initial Amount</string>
     <string name="cash_wallet_prompt">How much money do you have in your cash wallet?</string>
     <string name="amount_hint" translatable="false">%1$s 0</string>
+    <string name="add_expense">Expense</string>
+    <string name="income">Income</string>
+    <string name="transfer">Transfer</string>
+    <string name="save">Save</string>
+    <string name="memo">Memo</string>
 
 
     <!-- Currency Names and Symbols -->
@@ -66,4 +71,10 @@
         <item>Entertainment</item>
         <item>Miscellaneous</item>
     </string-array>
+
+    <string-array name="select_camera_and_gallery">
+        <item>Camera</item>
+        <item>Gallery</item>
+    </string-array>
+
 </resources>
