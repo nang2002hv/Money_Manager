@@ -60,6 +60,10 @@ class HomeFragment : Fragment() {
             }
         }
 
+        binding.add.setOnClickListener {
+            findNavController().navigate(R.id.addExpenseFragment)
+        }
+
         return binding.root
     }
 

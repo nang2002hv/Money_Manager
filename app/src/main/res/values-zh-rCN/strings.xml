@@ -30,6 +30,14 @@
     <string name="skip">跳过</string>
     <string name="initial_amount">初始金额</string>
     <string name="cash_wallet_prompt">您的现金钱包里有多少钱？</string>
+    <string name="add_expense">费用</string>
+    <string name="income">收入</string>
+    <string name="transfer">转账</string>
+    <string name="save">保存</string>
+    <string name="memo">备忘录</string>
+    <string name="from_wallet">从钱包</string>
+    <string name="to_wallet">到钱包</string>
+
 
 
     <!-- Currency Names and Symbols -->

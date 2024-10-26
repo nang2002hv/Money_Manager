@@ -40,6 +40,13 @@
     <string name="cash_wallet_prompt">How much money do you have in your cash wallet?</string>
     <string name="select_currency">Select Currency</string>
     <string name="favorite_currency_prompt">What is your favourite currency?</string>
+    <string name="add_expense">Expense</string>
+    <string name="income">Income</string>
+    <string name="transfer">Transfer</string>
+    <string name="save">Save</string>
+    <string name="memo">Memo</string>
+    <string name="from_wallet">From Wallet</string>
+    <string name="to_wallet">To Wallet</string>
 
     <!-- Currency Names and Symbols -->
     <string name="currency_cny">CNY</string>

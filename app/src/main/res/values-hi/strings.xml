@@ -30,6 +30,14 @@
     <string name="skip">छोड़ें</string>
     <string name="initial_amount">प्रारंभिक राशि</string>
     <string name="cash_wallet_prompt">आपके नकद बटुए में कितने पैसे हैं?</string>
+    <string name="add_expense">व्यय</string>
+    <string name="income">आय</string>
+    <string name="transfer">स्थानांतरण</string>
+    <string name="save">सहेजें</string>
+    <string name="memo">याददाश्त</string>
+    <string name="from_wallet">बटुआ से</string>
+    <string name="to_wallet">बटुआ में</string>
+
 
 
     <!-- Currency Names and Symbols -->
