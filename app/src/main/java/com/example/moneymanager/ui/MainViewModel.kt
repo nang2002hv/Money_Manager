@@ -3,6 +3,7 @@ package com.example.moneymanager.ui
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.moneymanager.data.entity.Account
+import com.example.moneymanager.data.entity.AccountWithWallet
 import com.example.moneymanager.data.entity.enums.Currency
 import com.example.moneymanager.data.repository.AccountRepository
 import com.example.moneymanager.di.AppDispatchers
@@ -26,31 +27,31 @@ class MainViewModel @Inject constructor(
     @Dispatcher(AppDispatchers.IO) private val ioDispatcher: CoroutineDispatcher
 ) : ViewModel() {
 
-    private val _accounts : MutableStateFlow<List<Account>> = MutableStateFlow(emptyList())
-    val accounts : StateFlow<List<Account>> get() = _accounts
+    private val _accounts : MutableStateFlow<List<AccountWithWallet>> = MutableStateFlow(emptyList())
+    val accounts : StateFlow<List<AccountWithWallet>> get() = _accounts
 
-    private val _currentAccount : MutableStateFlow<Account?> = MutableStateFlow(null)
-    val currentAccount : StateFlow<Account?> get() = _currentAccount
+    private val _currentAccount : MutableStateFlow<AccountWithWallet?> = MutableStateFlow(null)
+    val currentAccount : StateFlow<AccountWithWallet?> get() = _currentAccount
 
     private val _addingAccount = MutableStateFlow(AddingAccount("", Currency.USD, 0.0))
     val addingAccount: StateFlow<AddingAccount> get() = _addingAccount
 
-    init {
-        getAccount()
-        if(accounts.value.isNotEmpty()) {
-            setCurrentAccount(accounts.value[0])
-        }
-    }
+//    init {
+//        getAccount()
+//        if(accounts.value.isNotEmpty()) {
+//            setCurrentAccount(accounts.value[0])
+//        }
+//    }
 
     fun setAddingAccount(addingAccount: AddingAccount) {
         _addingAccount.value = addingAccount
     }
 
-    fun setCurrentAccount(account: Account) {
+    fun setCurrentAccount(account: AccountWithWallet) {
         _currentAccount.value = account
     }
 
-    private fun getAccount() {
+    fun getAccount() {
         viewModelScope.launch {
             repository.getAccount().collect {
                 _accounts.value = it
@@ -70,10 +71,13 @@ class MainViewModel @Inject constructor(
                 )
 
                 setCurrentAccount(
-                    Account(
-                        id = accountId,
-                        nameAccount = newAccount.name,
-                        currency = newAccount.currency
+                    AccountWithWallet(
+                        Account(
+                            id = accountId,
+                            nameAccount = newAccount.name,
+                            currency = newAccount.currency
+                        ),
+                        emptyList()
                     )
                 )
 
