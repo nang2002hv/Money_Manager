@@ -38,6 +38,8 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
+        viewModel.getAccount()
+
         // Initialize NavController
         navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
@@ -49,26 +51,33 @@ class MainActivity : AppCompatActivity() {
     private fun setDynamicStartDestination() {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
-                val languageStart = checkLanguageInitialization(this@MainActivity)
-                Log.d(TAG, "Checking language start: $languageStart")
+                viewModel.accounts.collect { accounts ->
+                    if (accounts.isNotEmpty() && viewModel.currentAccount.value == null) {
+                        viewModel.setCurrentAccount(accounts[0])
+                    }
+                    val languageStart = checkLanguageInitialization(this@MainActivity)
+                    Log.d(TAG, "Checking language start: $languageStart")
+                    Log.d(TAG, "Account list: $accounts")
 
-                val navGraph = navController.navInflater.inflate(R.navigation.nav_graph)
-                val startDestination = when (languageStart) {
-                    LanguageStart.NOT_INITIALIZED -> R.id.languageSelectionFragment
-                    LanguageStart.INITIALIZED -> {
-                        if (viewModel.accounts.value.isNotEmpty()) {
-                            R.id.homeFragment
-                        } else {
-                            R.id.addAccountFragment
+                    val navGraph = navController.navInflater.inflate(R.navigation.nav_graph)
+                    val startDestination = when (languageStart) {
+                        LanguageStart.NOT_INITIALIZED -> R.id.languageSelectionFragment
+                        LanguageStart.INITIALIZED -> {
+                            if (accounts.isNotEmpty()) {
+                                R.id.homeFragment
+                            } else {
+                                R.id.addAccountFragment
+                            }
                         }
                     }
-                }
 
-                navGraph.setStartDestination(startDestination)
-                navController.graph = navGraph // Apply the new graph to NavController
+                    navGraph.setStartDestination(startDestination)
+                    navController.graph = navGraph
+                }
             }
         }
     }
+
 
     private fun setPreferredLocale(languageCode: String) {
         val localeList = LocaleListCompat.forLanguageTags(languageCode)

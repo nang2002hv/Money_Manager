@@ -20,7 +20,7 @@ import com.example.moneymanager.data.entity.enums.WalletType
 )
 data class Wallet(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
-    @ColumnInfo(name = "initial_amount") val initialAmount: Double,
+    @ColumnInfo(name = "amount") val amount: Double,
     @ColumnInfo(name = "account_id") val accountId: Int,
     @TypeConverters(WalletTypeConverter::class)
     @ColumnInfo(name = "type_wallet_name") val typeWallet: WalletType,

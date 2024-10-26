@@ -53,7 +53,7 @@ class InitAmountFragment : Fragment() {
         )
         mainViewModel.addAccount()
         val navOptions = navOptions {
-            popUpTo(R.id.initAmountFragment) { inclusive = true }
+            popUpTo(R.id.addAccountFragment) { inclusive = true }
         }
         findNavController().navigate(R.id.action_initAmountFragment_to_homeFragment, null, navOptions)
     }

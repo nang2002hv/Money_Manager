@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Money Manager</string>
     <string name="search">खोजें</string>
     <string name="filter_options">फ़िल्टर विकल्प</string>
     <string name="date">तारीख</string>
@@ -18,7 +17,6 @@
     <string name="apply">लागू करें</string>
     <string name="cancel">रद्द करें</string>
     <string name="uk_flag">यूके ध्वज</string>
-    <string name="select_your_language">अपनी भाषा चुनें</string>
     <string name="done">समाप्त</string>
     <string name="english">अंग्रेज़ी</string>
     <string name="vietnamese">वियतनामी</string>
@@ -35,12 +33,9 @@
 
 
     <!-- Currency Names and Symbols -->
+    <string name="balance">"बैलेंस: "</string>
     <string name="currency_cny">CNY</string>
-    <string name="currency_cny_symbol">¥</string>
     <string name="currency_inr">INR</string>
-    <string name="currency_inr_symbol">₹</string>
     <string name="currency_vnd">VND</string>
-    <string name="currency_vnd_symbol">₫</string>
     <string name="currency_usd">USD</string>
-    <string name="currency_usd_symbol">$</string>
 </resources>
