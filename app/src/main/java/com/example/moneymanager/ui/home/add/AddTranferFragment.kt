@@ -26,7 +26,14 @@ class AddTranferFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         navGraph()
+        back()
 
+    }
+
+    fun back(){
+        binding.ivBack.setOnClickListener {
+            requireActivity().onBackPressedDispatcher.onBackPressed()
+        }
     }
 
     fun navGraph() {

@@ -6,12 +6,7 @@ import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "income_and_expense",
-    foreignKeys = [ForeignKey(
-        entity = Wallet::class,
-        parentColumns = ["id"],
-        childColumns = ["wallet_id"],
-        onDelete = ForeignKey.CASCADE
-    )]
+
 )
 data class IncomeAndExpense(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,

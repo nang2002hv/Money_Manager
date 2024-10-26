@@ -45,6 +45,8 @@
     <string name="transfer">Transfer</string>
     <string name="save">Save</string>
     <string name="memo">Memo</string>
+    <string name="from_wallet">From Wallet</string>
+    <string name="to_wallet">To Wallet</string>
 
     <!-- Currency Names and Symbols -->
     <string name="currency_cny">CNY</string>

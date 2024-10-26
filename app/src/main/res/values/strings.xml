@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Money Manager</string>
+    <string name="app_name" translatable="false">Money Manager</string>
     <string name="search">Search</string>
     <string name="filter_options">Filter options</string>
     <string name="date">Date</string>
@@ -47,6 +47,8 @@
     <string name="transfer">Transfer</string>
     <string name="save">Save</string>
     <string name="memo">Memo</string>
+    <string name="from_wallet">From Wallet</string>
+    <string name="to_wallet">To Wallet</string>
 
 
     <!-- Currency Names and Symbols -->
@@ -77,7 +79,7 @@
     <string name="india_language_code" translatable="false">hi</string>
     <string name="english_language_code" translatable="false">en</string>
     <string name="china_language_code" translatable="false">zh</string>
-    <string name="select_account">Select account</string>
+    <string name="select_account" translatable="false">Select account</string>
 
     <string-array name="select_camera_and_gallery">
         <item>Camera</item>

@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="@dimen/margin_small"
-    tools:context=".ui.home.add.AddIncomeFragment">
+    tools:context=".ui.home.add.AddExpenseFragment">
 
     <RelativeLayout
         android:id="@+id/rlHeader"
@@ -19,7 +19,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/add_expense"
+            android:layout_marginTop="@dimen/margin_small"
+            android:textSize="@dimen/text_size_16"
+            android:text="@string/income"
+            android:textStyle="bold"
+            android:textColor="@color/black"
             android:layout_toRightOf="@+id/ivBack"/>
 
         <TextView
@@ -42,20 +46,31 @@
             android:id="@+id/tv_income"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="@dimen/padding_small"
             android:text="@string/income"
+            android:background="@color/red"
+            android:textStyle="bold"
+            android:textColor="@color/white"
             android:layout_weight="1"
             android:gravity="center"/>
+
         <TextView
             android:id="@+id/tv_add_expense"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_weight="1"
+            android:gravity="center"
+            android:padding="@dimen/padding_small"
             android:text="@string/add_expense"
-            />
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/tv_transfer"
+            android:padding="@dimen/padding_small"
             android:layout_weight="1"
+            android:textStyle="bold"
+            android:textColor="@color/black"
             android:gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -66,6 +81,8 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="@color/black"
         android:layout_below="@+id/llSelectTranfer"
         android:layout_marginTop="@dimen/margin_small"
         android:text="@string/date"/>
@@ -109,6 +126,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/amount"
+        android:textStyle="bold"
+        android:textColor="@color/black"
         android:layout_below="@+id/line"/>
 
     <EditText
@@ -118,6 +137,8 @@
         android:layout_below="@+id/tv_amount"/>
 
     <TextView
+        android:textStyle="bold"
+        android:textColor="@color/black"
         android:id="@+id/tv_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -132,6 +153,8 @@
 
     <TextView
         android:id="@+id/tv_category"
+        android:textStyle="bold"
+        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/category"
@@ -143,12 +166,22 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_category"/>
 
+    <View
+        android:id="@+id/line_1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/black"
+        android:layout_margin="@dimen/margin_small"
+        android:layout_below="@id/sp_category"/>
+
     <TextView
         android:id="@+id/wallet"
+        android:textStyle="bold"
+        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/wallet"
-        android:layout_below="@+id/sp_category"/>
+        android:layout_below="@+id/line_1"/>
 
     <Spinner
         android:id="@+id/sp_wallet"
@@ -156,12 +189,22 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/wallet"/>
 
+    <View
+        android:id="@+id/line_2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/black"
+        android:layout_margin="@dimen/margin_small"
+        android:layout_below="@id/sp_wallet"/>
+
     <TextView
         android:id="@+id/tv_memo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="@color/black"
         android:text="@string/memo"
-        android:layout_below="@+id/sp_wallet"/>
+        android:layout_below="@+id/line_2"/>
 
     <LinearLayout
         android:id="@+id/ll_memo"
@@ -187,10 +230,18 @@
 
     </LinearLayout>
 
+    <View
+        android:id="@+id/line_3"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/black"
+        android:layout_margin="@dimen/margin_small"
+        android:layout_below="@id/ll_memo"/>
+
     <ImageView
         android:id="@+id/iv_image"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_below="@+id/ll_memo" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line_3" />
 
 </RelativeLayout>

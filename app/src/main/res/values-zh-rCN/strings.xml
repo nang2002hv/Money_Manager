@@ -35,6 +35,8 @@
     <string name="transfer">转账</string>
     <string name="save">保存</string>
     <string name="memo">备忘录</string>
+    <string name="from_wallet">从钱包</string>
+    <string name="to_wallet">到钱包</string>
 
 
 

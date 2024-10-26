@@ -12,6 +12,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
@@ -67,6 +68,38 @@ class AddExpenseFragment : Fragment() {
         selectImage()
         observe()
         saveTranfer()
+        selectWallet()
+        selectCategory()
+        back()
+    }
+
+    fun back(){
+        binding.ivBack.setOnClickListener {
+            requireActivity().onBackPressedDispatcher.onBackPressed()
+        }
+    }
+
+
+    fun selectCategory(){
+        ArrayAdapter.createFromResource(
+            requireContext(),
+            R.array.category_options,
+            android.R.layout.simple_spinner_item
+        ).also { adapter ->
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            binding.spCategory.adapter = adapter
+        }
+    }
+
+    fun selectWallet(){
+        ArrayAdapter.createFromResource(
+            requireContext(),
+            R.array.wallet_options,
+            android.R.layout.simple_spinner_item
+        ).also { adapter ->
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            binding.spWallet.adapter = adapter
+        }
     }
 
     fun saveTranfer() {
@@ -77,15 +110,14 @@ class AddExpenseFragment : Fragment() {
                 val description = binding.etDescription.text.toString()
                 val time = binding.etTime.text.toString()
                 val date = binding.etDate.text.toString()
-                val drawable = binding.ivImage.drawable
-                val imagePath = saveDrawableToAppStorage(requireContext(), drawable)
-                val category = ""
-                val typeOfExpenditure = ""
-                val idWallet = 0
-                val incomeAndExpense = AddIncomeAndExpense(amount, description, category, "chi tieu", 1, imagePath ?: "", date, time)
+                val getbitmap = viewModel.getBitmap()
+                val imagePath = viewModel.saveDrawableToAppStorage(requireContext(), getbitmap)
+                val category = binding.spCategory.selectedItem.toString()
+                val typeOfExpenditure = "Expense"
+                val idWallet = 1
+                val incomeAndExpense = AddIncomeAndExpense(amount, description, category, typeOfExpenditure, idWallet, imagePath ?: "", date, time)
                 viewModel.saveIncomeAndExpense(incomeAndExpense)
             } else {
-                // Handle the case where the amount is empty
                 Log.e("AddExpenseFragment", "Amount is empty")
             }
         }
@@ -156,24 +188,6 @@ class AddExpenseFragment : Fragment() {
         }
     }
 
-    fun saveDrawableToAppStorage(context: Context, drawable: Drawable): String? {
-        val bitmap = (drawable as BitmapDrawable).bitmap
-        val filename = "IMG_${System.currentTimeMillis()}.jpg"
-        val directory = context.getExternalFilesDir(Environment.DIRECTORY_PICTURES)
-        val file = File(directory, filename)
-
-        return try {
-            val outputStream = FileOutputStream(file)
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream)
-            outputStream.flush()
-            outputStream.close()
-            file.absolutePath
-        } catch (e: IOException) {
-            e.printStackTrace()
-            null
-        }
-    }
-
 
     fun pickTime(){
         binding.etTime.setOnClickListener {
@@ -181,6 +195,7 @@ class AddExpenseFragment : Fragment() {
         }
 
     }
+
 
     fun pickDate(){
         binding.etDate.setOnClickListener {
