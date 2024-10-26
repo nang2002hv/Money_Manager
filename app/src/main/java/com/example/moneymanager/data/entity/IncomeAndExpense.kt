@@ -21,5 +21,6 @@ data class IncomeAndExpense(
     @ColumnInfo(name = "type_of_expenditure") val typeOfExpenditure: String,
     @ColumnInfo(name = "wallet_id") val walletId: Int,
     @ColumnInfo(name = "link_img") val linkImg: String,
-    @ColumnInfo(name = "transfer_date") val transferDate: Long
+    @ColumnInfo(name = "transfer_date") val transferDate: Long,
+    @ColumnInfo(name = "transfer_time") val transferTime: Long
 )

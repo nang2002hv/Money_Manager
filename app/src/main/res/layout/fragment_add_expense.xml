@@ -1,0 +1,196 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/margin_small"
+    tools:context=".ui.home.add.AddExpenseFragment">
+
+    <RelativeLayout
+        android:id="@+id/rlHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="@dimen/icon_size_large"
+            android:layout_height="@dimen/icon_size_medium"
+            android:src="@drawable/ic_back"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_expense"
+            android:layout_toRightOf="@+id/ivBack"/>
+
+        <TextView
+            android:id="@+id/tvSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/save"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/llSelectTranfer"
+        android:layout_below="@+id/rlHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        >
+        <TextView
+            android:id="@+id/tv_income"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/income"
+            android:layout_weight="1"
+            android:gravity="center"/>
+        <TextView
+            android:id="@+id/tv_add_expense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="@string/add_expense"
+            />
+        <TextView
+            android:id="@+id/tv_transfer"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/transfer"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/llSelectTranfer"
+        android:layout_marginTop="@dimen/margin_small"
+        android:text="@string/date"/>
+
+    <LinearLayout
+        android:id="@+id/etDateAndTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="6"
+        android:layout_below="@id/textView">
+
+        <EditText
+            android:id="@+id/etDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:hint="@string/date"
+            android:background="@null"
+            />
+
+        <EditText
+            android:id="@+id/etTime"
+            android:hint="Time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:layout_weight="4" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/black"
+        android:layout_margin="@dimen/margin_small"
+        android:layout_below="@id/etDateAndTime"/>
+
+    <TextView
+        android:id="@+id/tv_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/amount"
+        android:layout_below="@+id/line"/>
+
+    <EditText
+        android:id="@+id/et_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_amount"/>
+
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/description"
+        android:layout_below="@+id/et_amount"/>
+
+    <EditText
+        android:id="@+id/et_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_description"/>
+    
+    <TextView
+        android:id="@+id/tv_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/category"
+        android:layout_below="@+id/et_description"/>
+    
+    <Spinner
+        android:id="@+id/sp_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_category"/>
+    
+    <TextView
+        android:id="@+id/wallet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/wallet"
+        android:layout_below="@+id/sp_category"/>
+
+    <Spinner
+        android:id="@+id/sp_wallet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/wallet"/>
+
+    <TextView
+        android:id="@+id/tv_memo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/memo"
+        android:layout_below="@+id/sp_wallet"/>
+
+    <LinearLayout
+        android:id="@+id/ll_memo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/tv_memo"
+        android:weightSum="10">
+
+        <EditText
+            android:id="@+id/et_memo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="8"
+            android:background="@null"/>
+
+        <ImageView
+            android:id="@+id/iv_memo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:src="@drawable/ic_camera"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_image"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@+id/ll_memo" />
+
+</RelativeLayout>

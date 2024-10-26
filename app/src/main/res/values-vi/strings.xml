@@ -30,6 +30,11 @@
     <string name="skip">BỎ QUA</string>
     <string name="initial_amount">Số Tiền Ban Đầu</string>
     <string name="cash_wallet_prompt">Bạn có bao nhiêu tiền trong ví tiền mặt của mình?</string>
+    <string name="add_expense">Chi phí</string>
+    <string name="income">Thu nhập</string>
+    <string name="transfer">Chuyển khoản</string>
+    <string name="save">Lưu</string>
+    <string name="memo">Ghi chú</string>
 
 
     <!-- Currency Names and Symbols -->
