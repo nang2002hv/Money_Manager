@@ -14,8 +14,8 @@ import androidx.room.PrimaryKey
     )]
 )
 data class DepositAndWithdraw(
-    @PrimaryKey(autoGenerate = true) val id: Int = 0,
+    @PrimaryKey(autoGenerate = true) val id: Long = 0,
     val amount: Double,
     val type: String,
-    @ColumnInfo(name = "goal_id") val goalId: Int
+    @ColumnInfo(name = "goal_id") val goalId: Long
 )

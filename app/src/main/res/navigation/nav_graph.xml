@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    tools:ignore="InvalidNavigation"
-    app:startDestination="@id/addExpenseFragment">
+    tools:ignore="InvalidNavigation">
 
     <fragment
         android:id="@+id/searchFragment"
@@ -18,12 +17,12 @@
         android:label="fragment_language_selection"
         tools:layout="@layout/fragment_language_selection" >
         <action
-            android:id="@+id/action_languageSelectionFragment_to_addAccountFragment"
-            app:destination="@id/addAccountFragment"
+            android:id="@+id/action_languageSelectionFragment_to_lockScreenFragment"
+            app:destination="@id/passcodeFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" />
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
 
     <fragment
@@ -40,7 +39,11 @@
             app:popExitAnim="@anim/slide_out_right" />
         <action
             android:id="@+id/action_homeFragment_to_addExpenseFragment"
-            app:destination="@id/addExpenseFragment" />
+            app:destination="@id/addExpenseFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
 
     <fragment
@@ -58,10 +61,25 @@
     </fragment>
 
     <fragment
-        android:id="@+id/lockScreenFragment"
-        android:name="com.example.moneymanager.ui.home.lock_screen.LockScreenFragment"
+        android:id="@+id/passcodeFragment"
+        android:name="com.example.moneymanager.ui.home.lock_screen.PasscodeFragment"
         android:label="fragment_lock_screen"
-        tools:layout="@layout/fragment_lock_screen" />
+        tools:layout="@layout/fragment_passcode" >
+        <action
+            android:id="@+id/action_lockScreenFragment_to_confirmPasscodeFragment"
+            app:destination="@id/confirmPasscodeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_lockScreenFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
 
     <fragment
         android:id="@+id/initAmountFragment"
@@ -97,10 +115,18 @@
         tools:layout="@layout/fragment_add_expense" >
         <action
             android:id="@+id/action_addExpenseFragment_to_addTranferFragment"
-            app:destination="@id/addTranferFragment" />
+            app:destination="@id/addTranferFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
         <action
             android:id="@+id/action_addExpenseFragment_to_addIncomeFragment"
-            app:destination="@id/addIncomeFragment" />
+            app:destination="@id/addIncomeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment
         android:id="@+id/addIncomeFragment"
@@ -109,10 +135,18 @@
         tools:layout="@layout/fragment_add_income" >
         <action
             android:id="@+id/action_addIncomeFragment_to_addTranferFragment"
-            app:destination="@id/addTranferFragment" />
+            app:destination="@id/addTranferFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
         <action
             android:id="@+id/action_addIncomeFragment_to_addExpenseFragment"
-            app:destination="@id/addExpenseFragment" />
+            app:destination="@id/addExpenseFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment
         android:id="@+id/addTranferFragment"
@@ -121,10 +155,31 @@
         tools:layout="@layout/fragment_add_tranfer" >
         <action
             android:id="@+id/action_addTranferFragment_to_addIncomeFragment"
-            app:destination="@id/addIncomeFragment" />
+            app:destination="@id/addIncomeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
         <action
             android:id="@+id/action_addTranferFragment_to_addExpenseFragment"
-            app:destination="@id/addExpenseFragment" />
+            app:destination="@id/addExpenseFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/confirmPasscodeFragment"
+        android:name="com.example.moneymanager.ui.home.lock_screen.ConfirmPasscodeFragment"
+        android:label="fragment_confirm_passcode"
+        tools:layout="@layout/fragment_confirm_passcode" >
+        <action
+            android:id="@+id/action_confirmPasscodeFragment_to_addAccountFragment"
+            app:destination="@id/addAccountFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
 
 </navigation>

@@ -38,4 +38,8 @@ object DatabaseModule {
     @Provides
     @Singleton
     fun provideIncomeAndExpenseDao(appDatabase: AppDatabase) = appDatabase.incomeAndExpenseDao()
+
+    @Provides
+    @Singleton
+    fun provideWalletDao(appDatabase: AppDatabase) = appDatabase.walletDao()
 }

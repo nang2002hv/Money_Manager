@@ -61,6 +61,8 @@
     <string name="currency_usd">USD</string>
     <string name="currency_usd_symbol" translatable="false">$</string>
     <string name="vn_language_code" translatable="false">vi</string>
+    <string name="enter_your_pass_code">Enter your pass code</string>
+    <string name="incorrect_pass_code">Incorrect pass code</string>
 
     <string-array name="wallet_options">
         <item>Cash</item>
@@ -79,7 +81,9 @@
     <string name="india_language_code" translatable="false">hi</string>
     <string name="english_language_code" translatable="false">en</string>
     <string name="china_language_code" translatable="false">zh</string>
-    <string name="select_account" translatable="false">Select account</string>
+    <string name="select_account">Select account</string>
+    <string name="hinted_passcode" translatable="false">-</string>
+    <string name="confirm_your_pass_code">Confirm your pass code</string>
 
     <string-array name="select_camera_and_gallery">
         <item>Camera</item>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#F5F5F5"
+    android:padding="16dp"
+    tools:context=".ui.home.lock_screen.ConfirmPasscodeFragment">
+
+    <!-- Back Button -->
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Back"
+        android:padding="8dp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Icon ImageView -->
+    <ImageView
+        android:id="@+id/iconImageView"
+        android:layout_width="150dp"
+        android:layout_height="181dp"
+        android:layout_marginTop="24dp"
+        android:contentDescription="Passcode Icon"
+        android:src="@drawable/passcode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/backButton" />
+
+    <!-- Instruction Text -->
+    <TextView
+        android:id="@+id/instructionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="16dp"
+        android:text="@string/confirm_your_pass_code"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iconImageView" />
+
+    <!-- Passcode Input Fields -->
+    <EditText
+        android:layout_marginTop="16dp"
+        android:id="@+id/passcodeField1"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/passcode_background"
+        android:gravity="center"
+        android:hint="@string/hinted_passcode"
+        android:importantForAutofill="no"
+        android:inputType="numberPassword"
+        android:maxLength="1"
+        android:textColor="#333333"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@id/passcodeField2"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/instructionTextView" />
+
+    <EditText
+        android:id="@+id/passcodeField2"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/passcode_background"
+        android:gravity="center"
+        android:hint="@string/hinted_passcode"
+        android:importantForAutofill="no"
+        android:inputType="numberPassword"
+        android:maxLength="1"
+        android:textColor="#333333"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@id/passcodeField3"
+        app:layout_constraintStart_toEndOf="@id/passcodeField1"
+        app:layout_constraintTop_toTopOf="@id/passcodeField1" />
+
+    <EditText
+        android:id="@+id/passcodeField3"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/passcode_background"
+        android:gravity="center"
+        android:hint="@string/hinted_passcode"
+        android:importantForAutofill="no"
+        android:inputType="numberPassword"
+        android:maxLength="1"
+        android:textColor="#333333"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@id/passcodeField4"
+        app:layout_constraintStart_toEndOf="@id/passcodeField2"
+        app:layout_constraintTop_toTopOf="@id/passcodeField1" />
+
+    <EditText
+        android:id="@+id/passcodeField4"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/passcode_background"
+        android:gravity="center"
+        android:hint="@string/hinted_passcode"
+        android:importantForAutofill="no"
+        android:inputType="numberPassword"
+        android:maxLength="1"
+        android:textColor="#333333"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@id/passcodeField5"
+        app:layout_constraintStart_toEndOf="@id/passcodeField3"
+        app:layout_constraintTop_toTopOf="@id/passcodeField1" />
+
+    <EditText
+        android:id="@+id/passcodeField5"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/passcode_background"
+        android:gravity="center"
+        android:hint="@string/hinted_passcode"
+        android:importantForAutofill="no"
+        android:inputType="numberPassword"
+        android:maxLength="1"
+        android:textColor="#333333"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@id/passcodeField6"
+        app:layout_constraintStart_toEndOf="@id/passcodeField4"
+        app:layout_constraintTop_toTopOf="@id/passcodeField1" />
+
+    <EditText
+        android:id="@+id/passcodeField6"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/passcode_background"
+        android:gravity="center"
+        android:hint="@string/hinted_passcode"
+        android:importantForAutofill="no"
+        android:inputType="numberPassword"
+        android:maxLength="1"
+        android:textColor="#333333"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/passcodeField5"
+        app:layout_constraintTop_toTopOf="@id/passcodeField1" />
+
+
+    <include
+        android:id="@+id/numericKeyboard"
+        layout="@layout/numeric_keyboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/passcodeField1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

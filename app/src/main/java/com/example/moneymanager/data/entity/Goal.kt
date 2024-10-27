@@ -17,8 +17,8 @@ import com.example.moneymanager.data.entity.enums.Currency
     )]
 )
 data class Goal(
-    @PrimaryKey(autoGenerate = true) val id: Int = 0,
-    @ColumnInfo(name = "account_id") val accountId: Int,
+    @PrimaryKey(autoGenerate = true) val id: Long = 0,
+    @ColumnInfo(name = "account_id") val accountId: Long,
     @ColumnInfo(name = "target_date") val targetDate: Long,
     @ColumnInfo(name = "type_color") val typeColor: String,
     @ColumnInfo(name = "goal_amount") val goalAmount: Double,

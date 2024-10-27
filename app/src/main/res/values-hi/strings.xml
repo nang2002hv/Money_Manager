@@ -46,4 +46,8 @@
     <string name="currency_inr">INR</string>
     <string name="currency_vnd">VND</string>
     <string name="currency_usd">USD</string>
+    <string name="enter_your_pass_code">अपना पासकोड दर्ज करें</string>
+    <string name="confirm_your_pass_code">अपना पासकोड पुष्टि करें</string>
+    <string name="select_account">खाता चुनें</string>
+    <string name="incorrect_pass_code">गलत पासकोड</string>
 </resources>

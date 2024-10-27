@@ -4,8 +4,11 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.moneymanager.data.entity.Account
 import com.example.moneymanager.data.entity.AccountWithWallet
+import com.example.moneymanager.data.entity.Wallet
 import com.example.moneymanager.data.entity.enums.Currency
+import com.example.moneymanager.data.entity.enums.WalletType
 import com.example.moneymanager.data.repository.AccountRepository
+import com.example.moneymanager.data.repository.WalletRepository
 import com.example.moneymanager.di.AppDispatchers
 import com.example.moneymanager.di.Dispatcher
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -23,8 +26,9 @@ data class AddingAccount(
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    private val repository: AccountRepository,
-    @Dispatcher(AppDispatchers.IO) private val ioDispatcher: CoroutineDispatcher
+    @Dispatcher(AppDispatchers.IO) private val ioDispatcher: CoroutineDispatcher,
+    private val accountRepository: AccountRepository,
+    private val walletRepository: WalletRepository
 ) : ViewModel() {
 
     private val _accounts : MutableStateFlow<List<AccountWithWallet>> = MutableStateFlow(emptyList())
@@ -36,12 +40,15 @@ class MainViewModel @Inject constructor(
     private val _addingAccount = MutableStateFlow(AddingAccount("", Currency.USD, 0.0))
     val addingAccount: StateFlow<AddingAccount> get() = _addingAccount
 
-//    init {
-//        getAccount()
-//        if(accounts.value.isNotEmpty()) {
-//            setCurrentAccount(accounts.value[0])
-//        }
-//    }
+    private val _passcode = MutableStateFlow("")
+    val passcode: StateFlow<String> get() = _passcode
+
+    init {
+        getAccount()
+        if(accounts.value.isNotEmpty()) {
+            setCurrentAccount(accounts.value[0])
+        }
+    }
 
     fun setAddingAccount(addingAccount: AddingAccount) {
         _addingAccount.value = addingAccount
@@ -53,7 +60,7 @@ class MainViewModel @Inject constructor(
 
     fun getAccount() {
         viewModelScope.launch {
-            repository.getAccount().collect {
+            accountRepository.getAccount().collect {
                 _accounts.value = it
             }
         }
@@ -63,10 +70,17 @@ class MainViewModel @Inject constructor(
         viewModelScope.launch(ioDispatcher) {
             val newAccount = addingAccount.value
             if (newAccount.name.isNotEmpty()) {
-                val accountId = repository.insertAccount(
+                val accountId = accountRepository.insertAccount(
                     Account(
                         nameAccount = newAccount.name,
                         currency = newAccount.currency
+                    )
+                )
+                val walletId = walletRepository.insertWallet(
+                    Wallet(
+                        accountId = accountId,
+                        amount = newAccount.initAmount,
+                        typeWallet = WalletType.GENERAL
                     )
                 )
 
@@ -77,13 +91,24 @@ class MainViewModel @Inject constructor(
                             nameAccount = newAccount.name,
                             currency = newAccount.currency
                         ),
-                        emptyList()
+                        listOf(
+                            Wallet(
+                                id = walletId,
+                                accountId = accountId,
+                                amount = newAccount.initAmount,
+                                typeWallet = WalletType.GENERAL
+                            )
+                        )
                     )
                 )
 
                 _addingAccount.value = AddingAccount("", Currency.USD, 0.0)
             }
         }
+    }
+
+    fun setPasscode(passcode: String) {
+        _passcode.value = passcode
     }
 
 }

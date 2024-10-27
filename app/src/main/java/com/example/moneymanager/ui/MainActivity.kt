@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
-        viewModel.getAccount()
+//        viewModel.getAccount()
 
         // Initialize NavController
         navHostFragment =
@@ -51,29 +51,16 @@ class MainActivity : AppCompatActivity() {
     private fun setDynamicStartDestination() {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.accounts.collect { accounts ->
-                    if (accounts.isNotEmpty() && viewModel.currentAccount.value == null) {
-                        viewModel.setCurrentAccount(accounts[0])
-                    }
-                    val languageStart = checkLanguageInitialization(this@MainActivity)
-                    Log.d(TAG, "Checking language start: $languageStart")
-                    Log.d(TAG, "Account list: $accounts")
+                val languageStart = checkLanguageInitialization(this@MainActivity)
+                Log.d(TAG, "Checking language start: $languageStart")
 
-                    val navGraph = navController.navInflater.inflate(R.navigation.nav_graph)
-                    val startDestination = when (languageStart) {
-                        LanguageStart.NOT_INITIALIZED -> R.id.languageSelectionFragment
-                        LanguageStart.INITIALIZED -> {
-                            if (accounts.isNotEmpty()) {
-                                R.id.homeFragment
-                            } else {
-                                R.id.addAccountFragment
-                            }
-                        }
-                    }
-
-                    navGraph.setStartDestination(startDestination)
-                    navController.graph = navGraph
+                val navGraph = navController.navInflater.inflate(R.navigation.nav_graph)
+                val startDestination = when (languageStart) {
+                    LanguageStart.NOT_INITIALIZED -> R.id.languageSelectionFragment
+                    LanguageStart.INITIALIZED -> R.id.passcodeFragment
                 }
+                navGraph.setStartDestination(startDestination)
+                navController.graph = navGraph
             }
         }
     }

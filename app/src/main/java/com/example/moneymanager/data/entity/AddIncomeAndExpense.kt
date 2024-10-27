@@ -5,10 +5,10 @@ data class AddIncomeAndExpense(
     val description: String,
     val typeCategory : String,
     val typeOfExpenditure : String,
-    val idWallet: Int,
+    val idWallet: Long,
     val linkImg: String,
     val transferDate: String,
     val transferTime: String
 ) {
-    constructor() : this(0.0, "", "", "", 0, "", "", "")
+    constructor() : this(0.0, "", "", "", 0L, "", "", "")
 }

@@ -114,7 +114,7 @@ class AddExpenseFragment : Fragment() {
                 val imagePath = viewModel.saveDrawableToAppStorage(requireContext(), getbitmap)
                 val category = binding.spCategory.selectedItem.toString()
                 val typeOfExpenditure = "Expense"
-                val idWallet = 1
+                val idWallet = 1L
                 val incomeAndExpense = AddIncomeAndExpense(amount, description, category, typeOfExpenditure, idWallet, imagePath ?: "", date, time)
                 viewModel.saveIncomeAndExpense(incomeAndExpense)
             } else {

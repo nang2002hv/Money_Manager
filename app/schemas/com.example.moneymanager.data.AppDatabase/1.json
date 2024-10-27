@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "7477a41d5b5e7032da7bcec2471e3094",
+    "identityHash": "225749700ffdebf3b9ac33a4979395b0",
     "entities": [
       {
         "tableName": "account",
@@ -274,7 +274,7 @@
       },
       {
         "tableName": "income_and_expense",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `amount` REAL NOT NULL, `description` TEXT NOT NULL, `type_category` TEXT NOT NULL, `type_of_expenditure` TEXT NOT NULL, `wallet_id` INTEGER NOT NULL, `link_img` TEXT NOT NULL, `transfer_date` INTEGER NOT NULL, `transfer_time` INTEGER NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `amount` REAL NOT NULL, `description` TEXT NOT NULL, `type_category` TEXT NOT NULL, `type_of_expenditure` TEXT NOT NULL, `wallet_id` INTEGER NOT NULL, `link_img` TEXT NOT NULL, `transfer_date` INTEGER NOT NULL, `transfer_time` INTEGER NOT NULL, FOREIGN KEY(`wallet_id`) REFERENCES `wallet`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
         "fields": [
           {
             "fieldPath": "id",
@@ -338,7 +338,19 @@
           ]
         },
         "indices": [],
-        "foreignKeys": []
+        "foreignKeys": [
+          {
+            "table": "wallet",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "wallet_id"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
       },
       {
         "tableName": "transfer_wallet",
@@ -456,7 +468,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '7477a41d5b5e7032da7bcec2471e3094')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '225749700ffdebf3b9ac33a4979395b0')"
     ]
   }
 }

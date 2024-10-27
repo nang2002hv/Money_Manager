@@ -17,8 +17,8 @@ import com.example.moneymanager.data.entity.enums.Currency
     )]
 )
 data class Debt(
-    @PrimaryKey(autoGenerate = true) val id: Int = 0,
-    @ColumnInfo(name = "account_id") val accountId: Int,
+    @PrimaryKey(autoGenerate = true) val id: Long = 0,
+    @ColumnInfo(name = "account_id") val accountId: Long,
     val amount: Double,
     @ColumnInfo(name = "type_color") val typeColor: String
 )

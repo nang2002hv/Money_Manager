@@ -46,4 +46,8 @@
     <string name="currency_inr">INR</string>
     <string name="currency_vnd">VND</string>
     <string name="currency_usd">USD</string>
+    <string name="enter_your_pass_code">输入您的密码</string>
+    <string name="confirm_your_pass_code">确认您的密码</string>
+    <string name="select_account">选择账户</string>
+    <string name="incorrect_pass_code">密码错误</string>
 </resources>
