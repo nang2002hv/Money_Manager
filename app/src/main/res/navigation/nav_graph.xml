@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/languageSelectionFragment"
-        android:name="com.example.moneymanager.ui.home.language_selection.LanguageSelectionFragment"
+        android:name="com.example.moneymanager.ui.language_selection.LanguageSelectionFragment"
         android:label="fragment_language_selection"
         tools:layout="@layout/fragment_language_selection" >
         <action
@@ -26,19 +26,19 @@
     </fragment>
 
     <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.example.moneymanager.ui.home.home_screen.HomeFragment"
+        android:id="@+id/mainFragment"
+        android:name="com.example.moneymanager.ui.main_screen.MainFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_main" >
         <action
-            android:id="@+id/action_homeFragment_to_addAccountFragment"
+            android:id="@+id/action_mainFragment_to_addAccountFragment"
             app:destination="@id/addAccountFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
         <action
-            android:id="@+id/action_homeFragment_to_addExpenseFragment"
+            android:id="@+id/action_mainFragment_to_addExpenseFragment"
             app:destination="@id/addExpenseFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
@@ -48,7 +48,7 @@
 
     <fragment
         android:id="@+id/addAccountFragment"
-        android:name="com.example.moneymanager.ui.home.add_account.AddAccountFragment"
+        android:name="com.example.moneymanager.ui.add_account.AddAccountFragment"
         android:label="fragment_add_account"
         tools:layout="@layout/fragment_add_account" >
         <action
@@ -62,19 +62,19 @@
 
     <fragment
         android:id="@+id/passcodeFragment"
-        android:name="com.example.moneymanager.ui.home.lock_screen.PasscodeFragment"
+        android:name="com.example.moneymanager.ui.lock_screen.PasscodeFragment"
         android:label="fragment_lock_screen"
         tools:layout="@layout/fragment_passcode" >
         <action
-            android:id="@+id/action_lockScreenFragment_to_confirmPasscodeFragment"
+            android:id="@+id/action_passcodeFragment_to_confirmPasscodeFragment"
             app:destination="@id/confirmPasscodeFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
         <action
-            android:id="@+id/action_lockScreenFragment_to_homeFragment"
-            app:destination="@id/homeFragment"
+            android:id="@+id/action_passcodeFragment_to_homeFragment"
+            app:destination="@id/mainFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
@@ -83,12 +83,12 @@
 
     <fragment
         android:id="@+id/initAmountFragment"
-        android:name="com.example.moneymanager.ui.home.init_amount.InitAmountFragment"
+        android:name="com.example.moneymanager.ui.init_amount.InitAmountFragment"
         android:label="fragment_init_amount"
         tools:layout="@layout/fragment_init_amount" >
         <action
             android:id="@+id/action_initAmountFragment_to_homeFragment"
-            app:destination="@id/homeFragment"
+            app:destination="@id/mainFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
@@ -97,7 +97,7 @@
 
     <fragment
         android:id="@+id/currencySelectionFragment"
-        android:name="com.example.moneymanager.ui.home.currency_selection.CurrencySelectionFragment"
+        android:name="com.example.moneymanager.ui.currency_selection.CurrencySelectionFragment"
         android:label="fragment_currency_selection"
         tools:layout="@layout/fragment_currency_selection" >
         <action
@@ -110,7 +110,7 @@
     </fragment>
     <fragment
         android:id="@+id/addExpenseFragment"
-        android:name="com.example.moneymanager.ui.home.add.AddExpenseFragment"
+        android:name="com.example.moneymanager.ui.add.AddExpenseFragment"
         android:label="fragment_add_expense"
         tools:layout="@layout/fragment_add_expense" >
         <action
@@ -130,7 +130,7 @@
     </fragment>
     <fragment
         android:id="@+id/addIncomeFragment"
-        android:name="com.example.moneymanager.ui.home.add.AddIncomeFragment"
+        android:name="com.example.moneymanager.ui.add.AddIncomeFragment"
         android:label="fragment_add_income"
         tools:layout="@layout/fragment_add_income" >
         <action
@@ -150,7 +150,7 @@
     </fragment>
     <fragment
         android:id="@+id/addTranferFragment"
-        android:name="com.example.moneymanager.ui.home.add.AddTranferFragment"
+        android:name="com.example.moneymanager.ui.add.AddTranferFragment"
         android:label="fragment_add_tranfer"
         tools:layout="@layout/fragment_add_tranfer" >
         <action
@@ -170,7 +170,7 @@
     </fragment>
     <fragment
         android:id="@+id/confirmPasscodeFragment"
-        android:name="com.example.moneymanager.ui.home.lock_screen.ConfirmPasscodeFragment"
+        android:name="com.example.moneymanager.ui.lock_screen.ConfirmPasscodeFragment"
         android:label="fragment_confirm_passcode"
         tools:layout="@layout/fragment_confirm_passcode" >
         <action

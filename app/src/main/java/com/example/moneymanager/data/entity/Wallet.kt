@@ -22,4 +22,7 @@ data class Wallet(
     @ColumnInfo(name = "account_id") val accountId: Long,
     @TypeConverters(WalletTypeConverter::class)
     @ColumnInfo(name = "type_wallet_name") val typeWallet: WalletType,
+    @ColumnInfo(name = "name") val name: String,
+    @ColumnInfo(name = "icon_id") val iconId: String,
+    @ColumnInfo(name = "color_id") val colorId: String
 )
