@@ -43,12 +43,12 @@ class MainViewModel @Inject constructor(
     private val _passcode = MutableStateFlow("")
     val passcode: StateFlow<String> get() = _passcode
 
-    init {
-        getAccount()
-        if(accounts.value.isNotEmpty()) {
-            setCurrentAccount(accounts.value[0])
-        }
-    }
+//    init {
+//        getAccount()
+//        if(accounts.value.isNotEmpty()) {
+//            setCurrentAccount(accounts.value[0])
+//        }
+//    }
 
     fun setAddingAccount(addingAccount: AddingAccount) {
         _addingAccount.value = addingAccount

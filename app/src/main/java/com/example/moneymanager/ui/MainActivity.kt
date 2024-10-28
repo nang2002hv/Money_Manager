@@ -38,7 +38,17 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
-//        viewModel.getAccount()
+        viewModel.getAccount()
+
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.accounts.collect {
+                    if (it.isNotEmpty()) {
+                        viewModel.setCurrentAccount(it[0])
+                    }
+                }
+            }
+        }
 
         // Initialize NavController
         navHostFragment =

@@ -49,9 +49,6 @@
     <string name="memo">Memo</string>
     <string name="from_wallet">From Wallet</string>
     <string name="to_wallet">To Wallet</string>
-
-
-    <!-- Currency Names and Symbols -->
     <string name="currency_cny">CNY</string>
     <string name="currency_cny_symbol" translatable="false">¥</string>
     <string name="currency_inr">INR</string>
@@ -63,6 +60,12 @@
     <string name="vn_language_code" translatable="false">vi</string>
     <string name="enter_your_pass_code">Enter your pass code</string>
     <string name="incorrect_pass_code">Incorrect pass code</string>
+    <string name="passcode_does_not_match">Passcode does not match</string>
+    <string name="please_enter_6_digit_passcode">Please enter a 6-digit passcode</string>
+    <string name="passcode_saved">Passcode saved</string>
+    <string name="home">Home</string>
+    <string name="calendar">Calendar</string>
+    <string name="statistic">Statistic</string>
 
     <string-array name="wallet_options">
         <item>Cash</item>
@@ -89,4 +92,7 @@
         <item>Camera</item>
         <item>Gallery</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_fab">Add FAB</string>
 </resources>

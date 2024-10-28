@@ -37,7 +37,12 @@
     <string name="memo">Ghi chú</string>
     <string name="from_wallet">Từ Ví</string>
     <string name="to_wallet">Đến Ví</string>
-
+    <string name="home">Trang chủ</string>
+    <string name="calendar">Lịch</string>
+    <string name="statistic">Thống kê</string>
+    <string name="passcode_does_not_match">Mã PIN không khớp</string>
+    <string name="please_enter_6_digit_passcode">Vui lòng nhập mã PIN 6 chữ số</string>
+    <string name="passcode_saved">Mã PIN đã được lưu</string>
 
     <!-- Currency Names and Symbols -->
     <string name="balance">"Số dư: "</string>

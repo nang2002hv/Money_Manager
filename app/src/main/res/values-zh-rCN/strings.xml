@@ -37,7 +37,12 @@
     <string name="memo">备忘录</string>
     <string name="from_wallet">从钱包</string>
     <string name="to_wallet">到钱包</string>
-
+    <string name="home">主页</string>
+    <string name="calendar">日历</string>
+    <string name="statistic">统计</string>
+    <string name="passcode_does_not_match">密码不匹配</string>
+    <string name="please_enter_6_digit_passcode">请输入6位数密码</string>
+    <string name="passcode_saved">密码已保存</string>
 
 
     <!-- Currency Names and Symbols -->
