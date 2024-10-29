@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:app/src/main/java/com/example/moneymanager/ui/main_screen/fragment/AccountSelectorBottomSheet.kt
 package com.example.moneymanager.ui.main_screen.fragment
-========
-package com.example.moneymanager.ui.home_screen.fragment
->>>>>>>> origin/master:app/src/main/java/com/example/moneymanager/ui/home_screen/fragment/AccountSelectorBottomSheet.kt
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,11 +8,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.moneymanager.data.entity.AccountWithWallet
 import com.example.moneymanager.databinding.AccountSelectionBottomSheetBinding
-<<<<<<<< HEAD:app/src/main/java/com/example/moneymanager/ui/main_screen/fragment/AccountSelectorBottomSheet.kt
 import com.example.moneymanager.ui.main_screen.adapter.AccountAdapter
-========
-import com.example.moneymanager.ui.home_screen.adapter.AccountAdapter
->>>>>>>> origin/master:app/src/main/java/com/example/moneymanager/ui/home_screen/fragment/AccountSelectorBottomSheet.kt
 
 class AccountSelectorBottomSheet(
     private val accounts: List<AccountWithWallet>,
