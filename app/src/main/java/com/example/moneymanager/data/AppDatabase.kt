@@ -19,7 +19,8 @@ import com.example.moneymanager.data.entity.Wallet
         Account::class, Budget::class, Debt::class, DepositAndWithdraw::class, Goal::class,
         IncomeAndExpense::class, TransferWallet::class, Wallet::class
     ],
-    version = 1
+    version = 1,
+    exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase(){
     abstract fun accountDao(): AccountDao

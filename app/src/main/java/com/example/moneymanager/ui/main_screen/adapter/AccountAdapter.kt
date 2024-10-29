@@ -1,4 +1,8 @@
+<<<<<<<< HEAD:app/src/main/java/com/example/moneymanager/ui/main_screen/adapter/AccountAdapter.kt
 package com.example.moneymanager.ui.main_screen.adapter
+========
+package com.example.moneymanager.ui.home_screen.adapter
+>>>>>>>> origin/master:app/src/main/java/com/example/moneymanager/ui/home_screen/adapter/AccountAdapter.kt
 
 import android.view.LayoutInflater
 import android.view.View
