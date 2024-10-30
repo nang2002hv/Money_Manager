@@ -80,7 +80,10 @@ class MainViewModel @Inject constructor(
                     Wallet(
                         accountId = accountId,
                         amount = newAccount.initAmount,
-                        typeWallet = WalletType.GENERAL
+                        typeWallet = WalletType.GENERAL,
+                        iconId = "ic_general",
+                        colorId = "color_general",
+                        name = "General"
                     )
                 )
 
@@ -96,7 +99,10 @@ class MainViewModel @Inject constructor(
                                 id = walletId,
                                 accountId = accountId,
                                 amount = newAccount.initAmount,
-                                typeWallet = WalletType.GENERAL
+                                typeWallet = WalletType.GENERAL,
+                                iconId = "ic_general",
+                                colorId = "color_general",
+                                name = "General"
                             )
                         )
                     )

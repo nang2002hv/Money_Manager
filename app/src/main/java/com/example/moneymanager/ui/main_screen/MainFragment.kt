@@ -69,7 +69,7 @@ class MainFragment : Fragment() {
 
                 1 -> {
                     // Action for Calendar Fragment
-//                    findNavController().navigate(R.id.addCalendarEventFragment)
+                    findNavController().navigate(R.id.calendarFragment)
                 }
 
                 2 -> {

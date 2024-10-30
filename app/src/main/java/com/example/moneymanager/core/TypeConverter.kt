@@ -4,6 +4,7 @@ import androidx.room.TypeConverter
 import com.example.moneymanager.data.entity.enums.Currency
 import com.example.moneymanager.data.entity.enums.WalletType
 import java.sql.Time
+import java.util.Calendar
 import java.util.Date
 
 class WalletTypeConverter {
@@ -48,6 +49,20 @@ class CurrencyTypeConverter {
     @TypeConverter
     fun timeToTimestamp(time: Time?): Long? {
         return time?.time
+    }
+
+    @TypeConverter
+    fun getDayOfWeekString(dayOfWeek: Int): String {
+        return when (dayOfWeek) {
+            Calendar.SUNDAY -> "Chủ Nhật"
+            Calendar.MONDAY -> "Thứ Hai"
+            Calendar.TUESDAY -> "Thứ Ba"
+            Calendar.WEDNESDAY -> "Thứ Tư"
+            Calendar.THURSDAY -> "Thứ Năm"
+            Calendar.FRIDAY -> "Thứ Sáu"
+            Calendar.SATURDAY -> "Thứ Bảy"
+            else -> "Không xác định"
+        }
     }
 }
 
