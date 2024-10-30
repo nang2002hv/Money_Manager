@@ -37,7 +37,7 @@ object DatabaseModule {
 
     @Provides
     @Singleton
-    fun provideIncomeAndExpenseDao(appDatabase: AppDatabase) = appDatabase.incomeAndExpenseDao()
+    fun provideTransferDao(appDatabase: AppDatabase) = appDatabase.transferDao()
 
     @Provides
     @Singleton
