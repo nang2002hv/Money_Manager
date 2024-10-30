@@ -43,7 +43,7 @@
     <string name="passcode_does_not_match">पासकोड मेल नहीं खाता</string>
     <string name="please_enter_6_digit_passcode">कृपया 6 अंकों का पासकोड दर्ज करें</string>
     <string name="passcode_saved">पासकोड सहेजा गया</string>
-
+    <string name="detail_day">विस्तार</string>
 
     <!-- Currency Names and Symbols -->
     <string name="balance">"बैलेंस: "</string>
