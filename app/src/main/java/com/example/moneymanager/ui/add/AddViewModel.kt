@@ -4,17 +4,12 @@ import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.content.Context
 import android.graphics.Bitmap
-import android.graphics.drawable.BitmapDrawable
-import android.graphics.drawable.Drawable
 import android.icu.util.Calendar
 import android.os.Environment
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.moneymanager.core.CurrencyTypeConverter
 import com.example.moneymanager.data.entity.AddIncomeAndExpense
-import com.example.moneymanager.data.entity.IncomeAndExpense
-import com.example.moneymanager.data.repository.IncomeAndExpenseRepository
+import com.example.moneymanager.data.repository.TransferRepository
 import com.example.moneymanager.di.AppDispatchers
 import com.example.moneymanager.di.Dispatcher
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -31,7 +26,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class AddViewModel @Inject constructor(
-    private val repository: IncomeAndExpenseRepository,
+    private val repository: TransferRepository,
     @Dispatcher(AppDispatchers.IO) private val ioDispatcher: CoroutineDispatcher
 )  : ViewModel() {
 
@@ -123,19 +118,6 @@ class AddViewModel @Inject constructor(
                 val timeFormat = SimpleDateFormat("HH:mm", Locale.getDefault())
                 val transferDate = dateFormat.parse(newIncomeAndExpense.transferDate)
                 val transferTime = timeFormat.parse(newIncomeAndExpense.transferTime)
-
-                repository.insertIncomeAndExpense(
-                    IncomeAndExpense(
-                        amount = newIncomeAndExpense.amount,
-                        description = newIncomeAndExpense.description,
-                        typeCategory = newIncomeAndExpense.typeCategory,
-                        typeOfExpenditure = newIncomeAndExpense.typeOfExpenditure,
-                        walletId = newIncomeAndExpense.idWallet,
-                        linkImg = newIncomeAndExpense.linkImg,
-                        transferDate = transferDate?.time ?: 0L,
-                        transferTime = transferTime?.time ?: 0L
-                    )
-                )
             }
         }
     }

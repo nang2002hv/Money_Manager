@@ -2,8 +2,8 @@ package com.example.moneymanager.di
 
 import com.example.moneymanager.data.repository.AccountRepository
 import com.example.moneymanager.data.repository.AccountRepositoryImpl
-import com.example.moneymanager.data.repository.IncomeAndExpenseRepository
-import com.example.moneymanager.data.repository.IncomeAndExpenseRepositoryImpl
+import com.example.moneymanager.data.repository.TransferRepository
+import com.example.moneymanager.data.repository.TransferRepositoryImpl
 import com.example.moneymanager.data.repository.WalletRepository
 import com.example.moneymanager.data.repository.WalletRepositoryImpl
 import dagger.Binds
@@ -21,7 +21,7 @@ abstract class RepositoryModule {
 
     @Binds
     @Singleton
-    abstract fun bindIncomeAndExpenseRepository(incomeAndExpenseRepositoryImpl: IncomeAndExpenseRepositoryImpl): IncomeAndExpenseRepository
+    abstract fun bindTransferRepository(transferRepositoryImpl: TransferRepositoryImpl): TransferRepository
 
     @Binds
     @Singleton
