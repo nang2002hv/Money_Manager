@@ -66,6 +66,7 @@
     <string name="home">Home</string>
     <string name="calendar">Calendar</string>
     <string name="statistic">Statistic</string>
+    <string name="detail_day">Deatil</string>
 
     <string-array name="wallet_options">
         <item>Cash</item>
