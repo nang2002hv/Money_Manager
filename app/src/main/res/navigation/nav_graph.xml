@@ -182,4 +182,18 @@
             app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
 
+    <fragment
+        android:id="@+id/calendarFragment"
+        android:name="com.example.moneymanager.ui.calendar_screen.CalendarFragment"
+        android:label="fragment_calendar"
+        tools:layout="@layout/fragment_calendar" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailDayFragment"
+        android:name="com.example.moneymanager.ui.detail.DetailDayFragment"
+        android:label="fragment_detail_day"
+        tools:layout="@layout/fragment_detail_day" >
+    </fragment>
+
 </navigation>
