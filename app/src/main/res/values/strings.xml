@@ -66,7 +66,7 @@
     <string name="home">Home</string>
     <string name="calendar">Calendar</string>
     <string name="statistic">Statistic</string>
-    <string name="detail_day">Deatil</string>
+    <string name="detail_day">Detail</string>
 
     <string-array name="wallet_options">
         <item>Cash</item>
@@ -93,7 +93,6 @@
         <item>Camera</item>
         <item>Gallery</item>
     </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="add_fab">Add FAB</string>
+    <string name="add_fab" translatable="false">Add FAB</string>
+    <string name="Manager">Manager (%1$d)</string>
 </resources>

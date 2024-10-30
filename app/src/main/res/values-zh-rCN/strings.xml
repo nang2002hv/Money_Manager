@@ -55,4 +55,5 @@
     <string name="confirm_your_pass_code">确认您的密码</string>
     <string name="select_account">选择账户</string>
     <string name="incorrect_pass_code">密码错误</string>
+    <string name="Manager">经理 (%1$d)</string>
 </resources>
